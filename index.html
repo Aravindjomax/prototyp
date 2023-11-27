@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>prototype</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css"> <!-- Link to your custom CSS file -->
+  <style>
+    /* Custom CSS file - styles.css */
+
+/* Media query to hide the first navbar on mobile (up to large screens) */
+@media (max-width: 991.98px) {
+    .navbar.d-none.d-lg-block {
+      display: none !important;
+    }
+  }
+
+  
+  .service-item {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+  }
+  .service-item h4 {
+    margin-bottom: 10px;
+  }
+
+  .counter {
+  font-size: 36px;
+  font-weight: bold;
+  color: #ffffff;
+  transition: 1s ease-in-out;
+}
+/* anime */
+.counter-wrapper{
+    background: url(Commissioned\ Illustration_2020\ Summer.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 1.5rem;
+    padding: 10rem 9%;
+    margin-top: 5rem;
+    position: relative;
+}
+.counter-wrapper::before{
+    position: absolute;
+    content: '';
+    content: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.747);
+    z-index: 1;
+}
+.counter{
+   text-align: center;   
+   color: #ffffff;
+   z-index: 2;
+   position: relative;
+}
+.counter::before{
+    position: absolute;
+    content: '';
+    bottom: -2rem;
+    left: 50%;
+    width: 20%;
+    height: .2rem;
+    background: #4DB7FE;
+    border-radius: .5rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+.counter .count{
+    font-size: 5rem;
+    margin-bottom: 1rem;    
+}
+.counter p{
+    font-size: 1.4rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+@media (max-width: 991px) {
+    html{
+        font-size: 55%;
+    }
+}
+@media (max-width: 768px) {
+   .counter-wrapper{
+       grid-template-columns: repeat(2, 1fr);
+       grid-row-gap: 8rem;
+   }
+}
+@media (max-width: 450px) {
+    html{
+        font-size: 50%;
+    }
+    .counter-wrapper{
+        grid-template-columns: 1fr;
+    }
+}
+* Flexbox Bootstrap Hover Animation */
+.flex-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.flex-card:hover {
+  transform: scale(1.05);
+}
+
+.flex-card:hover img {
+  filter: brightness(0.8);
+}
+
+.flex-card img {
+  transition: filter 0.3s ease-in-out;
+  width: 100%;
+  height: auto;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+/* logo */
+/* .p-t-40 {
+    padding-top: 40px;
+}
+.p-b-40 {
+    padding-bottom: 40px;
+}
+.p-b-40 {
+    padding-bottom: 40px;
+} */
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    
+}
+
+.image-flip img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.card {
+    height: 10%;
+    transition: transform 0.5s;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+
+  </style>
+</head>
+<body>
+<!-- nav -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-none d-lg-block">
+    <div class="container">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav2" aria-controls="navbarNav2" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav2">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </nav>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fs-5">
+    <div class="container">
+        <a class="navbar-brand" href="#">Main Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </nav>
+<!-- navend -->
+<!-- slide -->
+<section  class="section bg-grey-light p-t-70 p-b-80">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://www.vsjayan.com//images/banner2.jpg" class="d-block w-100"style="height: 400px;"alt="Image 1">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.vsjayan.com//images/banner1.jpg" class="d-block w-100"style="height: 400px;" alt="Image 2">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.vsjayan.com//images/banner3.jpg" class="d-block w-100"style="height: 400px;" alt="Image 3">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  </section>
+  <!-- slide -->
+<!-- service -->
+  <div class="container text-center py-5">
+    <h2 class="mb-4">Freelance Website Designer and Developer</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quos recusandae cum molestiae labore incidunt, ipsum sit? Dolorum dolor iste fugit iusto fuga consequuntur. Autem ab reiciendis molestias asperiores nihil.</p>
+    <h2 class="mb-4">Our Services</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="service-item mb-4">
+            <img src="https://www.vsjayan.com//images/icons/e-commerce.png" class="card-img-top"style="width: 90px;" alt="Service 3">
+          <h4>Service 1</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur repellat odio quasi omnis, quis repellendus voluptatibus, earum soluta quae ut tempore! Voluptates, veniam neque fuga ad similique sapiente facere eum.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="service-item mb-4">
+            <img src="https://www.vsjayan.com//images/icons/digital-marketing.png" class="card-img-top" style="width: 90px;" alt="Service 3">
+          <h4>Service 2</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur repellat odio quasi omnis, quis repellendus voluptatibus, earum soluta quae ut tempore! Voluptates, veniam neque fuga ad similique sapiente facere eum.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="service-item mb-4">
+            <img src="https://www.vsjayan.com//images/icons/webdesign.png" class="card-img-top" style="width: 90px;" alt="Service 3">
+          <h4>Service 3</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur repellat odio quasi omnis, quis repellendus voluptatibus, earum soluta quae ut tempore! Voluptates, veniam neque fuga ad similique sapiente facere eum.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="service-item mb-4">
+            <img src="https://www.vsjayan.com//images/icons/web-development.png" class="card-img-top" style="width: 90px;" alt="Service 3">
+          <h4>Service 4</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur repellat odio quasi omnis, quis repellendus voluptatibus, earum soluta quae ut tempore! Voluptates, veniam neque fuga ad similique sapiente facere eum.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="service-item mb-4">
+            <img src="https://www.vsjayan.com//images/icons/graphic-design.png" class="card-img-top" style="width: 90px;" alt="Service 3">
+          <h4>Service 5</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur repellat odio quasi omnis, quis repellendus voluptatibus, earum soluta quae ut tempore! Voluptates, veniam neque fuga ad similique sapiente facere eum.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="service-item mb-4">
+            <img src="https://www.vsjayan.com//images/icons/android.png" class="card-img-top" style="width: 90px;" alt="Service 3">
+          <h4>Service 6</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur repellat odio quasi omnis, quis repellendus voluptatibus, earum soluta quae ut tempore! Voluptates, veniam neque fuga ad similique sapiente facere eum.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- service -->
+<!-- animate -->
+<div class="counter-wrapper">
+    <div class="counter">
+        <h1 class="count" data-target="1254">0</h1>
+        <p>Projects completed</p>
+    </div>
+    <div class="counter">
+        <h1 class="count" data-target="12168">0</h1>
+        <p>Years Experience</p>
+    </div>
+    <div class="counter">
+        <h1 class="count" data-target="2172">0</h1>
+        <p>Awards Winning</p>
+    </div>
+    <div class="counter">
+        <h1 class="count" data-target="732">0</h1>
+        <p>Satisfied customers</p>
+    </div>
+</div>
+<!-- photo text -->
+<div class="container mt-5">
+    <h3 class="text-block text-center p-l-90 p-r-90 m-b-40">OUR PORTFOLIOS</h3>
+    <div class="row">
+      <!-- 12 cards -->
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card flex-card">
+          <img src="https://www.vsjayan.com//images/portfolio/clg2.jpg" class="card-img-top" style="height: 150px;" alt="Image">
+          <div class="card-body">
+            <h5 class="card-title">Title 1</h5>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card flex-card">
+          <img src="https://www.vsjayan.com//images/portfolio/globalbitcoin.JPG" class="card-img-top"style="height: 150px;" alt="Image">
+          <div class="card-body">
+            <h5 class="card-title">Title 1</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card flex-card">
+          <img src="https://www.vsjayan.com//images/portfolio/crypto.PNG" class="card-img-top"style="height: 150px;" alt="Image">
+          <div class="card-body">
+            <h5 class="card-title">Title 1</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card flex-card">
+          <img src="https://www.vsjayan.com//images/portfolio/multifeds.PNG" class="card-img-top"style="height: 150px;" alt="Image">
+          <div class="card-body">
+            <h5 class="card-title">Title 1</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card flex-card">
+          <img src="https://www.vsjayan.com//images/portfolio/port-im5.jpg" class="card-img-top"style="height: 150px;" alt="Image">
+          <div class="card-body">
+            <h5 class="card-title">Title 1</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card flex-card">
+          <img src="https://www.vsjayan.com//images/portfolio/port-im15.jpg" class="card-img-top"style="height: 150px;" alt="Image">
+          <div class="card-body">
+            <h5 class="card-title">Title 1</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card flex-card">
+          <img src="https://www.vsjayan.com//images/portfolio/xtendgifting-small.jpg" class="card-img-top"style="height: 150px;" alt="Image">
+          <div class="card-body">
+            <h5 class="card-title">Title 1</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card flex-card">
+          <img src="https://www.vsjayan.com//images/portfolio/subhamangala.JPG" class="card-img-top"style="height: 150px;" alt="Image">
+          <div class="card-body">
+            <h5 class="card-title">Title 1</h5>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!-- our -->
+  <section class="section bg-grey-light p-t-40 p-b-30">
+    <div class="container">
+        <div class="heading-section heading-section-2">
+            <h3 class="text-block text-center p-l-90 p-r-90 m-b-40">Freelance Web Designer and Developer Chennai</h3>
+        </div>
+        <p class="text-block text-center p-l-90 p-r-90 m-b-40">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="icon-box icon-box-7">
+                    <div class="icon">
+                        <p> <img src="https://www.vsjayan.com//images/icons/ic-we-are-01.png" alt="Understand Your Business"></p></div>
+                    <div class="content">
+                        <span class="top-title">Step No.1</span>
+                        <h3 class="title">Creative Ideas</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt tempora doloremque vitae cum, voluptatibus iste mollitia harum cumque ullam neque sapiente, corrupti, esse eius quaerat ratione quod labore? Dolore, dolorum.</p>
+                    </div></div> </div>
+            <div class="col-md-4">
+                <div class="icon-box icon-box-7">
+                    <div class="icon">
+                        <p><img src="https://www.vsjayan.com//images/icons/ic-we-are-02.png" alt="Design &amp; Development">
+                        </p></div>
+                    <div class="content">
+                        <span class="top-title">Step No.2</span>
+                        <h3 class="title">On Time Delivery</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt tempora doloremque vitae cum, voluptatibus iste mollitia harum cumque ullam neque sapiente, corrupti, esse eius quaerat ratione quod labore? Dolore, dolorum.</p>
+                    </div> </div></div>
+            <div class="col-md-4">
+                <div class="icon-box icon-box-7">
+                    <div class="icon">
+                        <p><img src="https://www.vsjayan.com//images/icons/ic-we-are-03.png" alt="Launch &amp; Promotion">
+                        </p></div>
+                    <div class="content">
+                        <span class="top-title">Step No.3</span>
+                        <h3 class="title">Dedicated State of Projects</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt tempora doloremque vitae cum, voluptatibus iste mollitia harum cumque ullam neque sapiente, corrupti, esse eius quaerat ratione quod labore? Dolore, dolorum.</p>
+                    </div> </div></div></div></div></section><br>
+                    <!-- card -->
+                    <section id="team" class="pb-5">
+                        <div class="container">
+                            <h5 class="section-title h1">OUR TEAM</h5>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                    <div class="image-flip">
+                                        <div class="mainflip flip-0">
+                                            <div class="frontside">
+                                                <div class="card">
+                                                    <div class="card-body text-center">
+                                                        <p><img class="img-fluid" src="https://assets.gqindia.com/photos/5eb29fcaf1e18c532cee05ef/16:9/w_1600,c_limit/Sundar%20Pichai.jpg" alt="team member 1"></p>
+                                                        <h4 class="card-title">Member 1</h4>
+                                                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, repellendus? Illum minus, facere recusandae incidunt sunt at aliquid commodi tempora necessitatibus doloribus sequi magnam cumque vel autem fuga nostrum? Molestias!</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                    <div class="image-flip">
+                                        <div class="mainflip flip-0">
+                                            <div class="frontside">
+                                                <div class="card">
+                                                    <div class="card-body text-center">
+                                                        <p><img class="img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg/220px-Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg" alt="team member 2"></p>
+                                                        <h4 class="card-title">Member 2</h4>
+                                                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde perspiciatis voluptatum quis numquam, tenetur laudantium totam cumque quas mollitia vero fugiat. Voluptas quod, excepturi iusto reiciendis vitae soluta odio rem?</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                    <div class="image-flip">
+                                        <div class="mainflip flip-0">
+                                            <div class="frontside">
+                                                <div class="card">
+                                                    <div class="card-body text-center">
+                                                        <p><img class="img-fluid" src="data:image/webp;base64,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" alt="team member 2"></p>
+                                                        <h4 class="card-title">Member 3</h4>
+                                                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad aspernatur aperiam est repudiandae nostrum ducimus cumque? Assumenda, eos. Dolorum cum distinctio molestiae dignissimos necessitatibus quam numquam delectus doloribus minima voluptas.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+  <!-- logo -->
+<section class="section bg-grey-light p-t-40 p-b-40">
+    <div class="container">
+        <div class="relative">
+            <div class="p-b-15">
+                <div class="heading-section heading-section-2 dark">
+                    <h3 class="text-block text-center p-l-90 p-r-90 m-b-40">OUR LOGO</h3>
+                </div>
+            </div>
+            <div class="row dark nav-style-2" data-carousel-margin="30" data-carousel-nav="true" data-carousel-loop="true" data-carousel-items="5" data-carousel-autoplay="true">
+                <div class="icon-box  col-sm-2">
+                    <div class="icon">
+                        <p>
+                            <img class="img-responsive" style="width: 180px;" src="https://www.vsjayan.com//images/clinet-logo2.png" alt="our client">
+                        </p>
+                    </div>
+                </div>
+                <div class="icon-box  col-sm-2">
+                    <div class="icon">
+                        <p>
+                            <img class="img-responsive" style="width: 180px;" src="https://www.vsjayan.com//images/clinet-logo6.png" alt="our client">
+                        </p>
+                    </div>
+                </div>
+                <div class="icon-box  col-sm-2">
+                    <div class="icon">
+                        <p>
+                            <img class="img-responsive" style="width: 180px;" src="https://www.vsjayan.com//images/clinet-logo11.png" alt="our client">
+                        </p>
+                    </div>
+                </div>
+               <div class="icon-box  col-sm-2">
+                    <div class="icon">
+                        <p>
+                            <img class="img-responsive"style="width: 180px;"  src="https://www.vsjayan.com//images/clinet-logo12.png" alt="our client">
+                        </p>
+                    </div>
+                </div>
+               
+               <div class="icon-box  col-sm-2">
+                    <div class="icon">
+                        <p>
+                            <img class="img-responsive" style="width: 180px;" src="https://www.vsjayan.com//images/clinet-logo5.png" alt="our client">
+                        </p>
+                    </div>
+                </div>
+                
+                
+                <div class="icon-box  col-sm-2">
+                    <div class="icon">
+                        <p>
+                            <img class="img-responsive"style="width: 180px;"  src="https://www.vsjayan.com//images/clt-logo2.png" alt="our client">
+                        </p>
+                    </div>
+                </div>
+                
+                </div>
+                
+                <div class="row" style="margin-top:30px;">
+                <div class="icon-box  col-sm-2">
+                    <div class="icon">
+                        <p>
+                            <img class="img-responsive"style="width: 180px;"  src="https://www.vsjayan.com//images/clinet-logo7.png" alt="our client">
+                        </p>
+                    </div>
+                </div>
+                <div class="icon-box  col-sm-2">
+                    <div class="icon">
+                        <p>
+                            <img class="img-responsive"style="width: 180px;"  src="https://www.vsjayan.com//images/clt-logo1.png" alt="our client">
+                        </p>
+                    </div>
+                </div>
+                <div class="icon-box  col-sm-2">
+                    <div class="icon">
+                        <p>
+                            <img class="img-responsive"style="width: 180px;"  src="https://www.vsjayan.com//images/clinet-logo9.png" alt="our client">
+                        </p>
+                    </div>
+                </div>
+                <div class="icon-box  col-sm-2">
+                    <div class="icon">
+                        <p>
+                            <img class="img-responsive"style="width: 180px;"  src="https://www.vsjayan.com//images/clinet-logo10.png" alt="our client">
+                        </p>
+                    </div>
+                </div>
+                <div class="icon-box  col-sm-2">
+                    <div class="icon">
+                        <p>
+                            <img class="img-responsive"style="width: 180px;"  src="https://www.vsjayan.com//images/clinet-logo3.png" alt="our client">
+                        </p>
+                    </div>
+                </div>
+                <div class="icon-box  col-sm-2">
+                    <div class="icon">
+                        <p>
+                            <img class="img-responsive"style="width: 180px;"  src="https://www.vsjayan.com//images/clinet-logo1.png" alt="our client">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+  <!-- footer -->
+<div class="top-footer p-t-40 p-b-20" style="background-color: #333; color: aliceblue; padding-top: 10px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="footer-block-1">
+                    <div class="logo">
+                        <img src="" alt="Consulting">
+                    </div>
+                    <div class="footer-block-2">
+                      <p>  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, ab saepe! Ipsa quasi perspiciatis unde, ducimus dolorum aut voluptas enim excepturi, inventore, eligendi eos temporibus quo fugit voluptatem et vitae!</p>
+                     </div>
+                    </div>
+                </div>
+            <div class="col-md-3">
+                <div class="footer-block-2">
+                    <div class="title">
+                        <h3>Services</h3>
+                    </div>
+                    <div class="contact-list">
+                        <ul>
+                            <li><a href="hire-a-freelance-web-designer-chennai.php">Website Design</a></li>
+                            <li><a href="hire-a-freelance-web-designer-chennai.php">Web Development</a></li>
+                            <li><a href="hire-a-freelance-web-designer-chennai.php">E-Commerce</a></li>
+                            <li><a href="hire-a-freelance-web-designer-chennai.php">Digital Marketing</a></li>
+                            <li><a href="hire-a-freelance-web-designer-chennai.php">Logo &amp; Brochure</a></li>
+                            <li><a href="hire-a-freelance-web-designer-chennai.php">Android App Development</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="footer-block-2">
+                    <div class="title">
+                        <h3>Contact us</h3>
+                    </div>
+                    <div class="contact-list">
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                            <li>Mobile :  +91-7904562723 </li>
+                            <li>Email : aravindssa12@gmail.com</li>
+                            <li>Skype :  Aravind</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="footer-block-2">
+                <div class="title">
+                        <h3>Quick Links</h3>
+                        </div>
+                        <div class="contact-list">
+                        <ul>
+                            <li><a href="https://www.vsjayan.com//index.php">Home</a></li>
+                            <li><a href="https://www.vsjayan.com//creative-web-designers-in-chennai.php">About Us</a></li>
+                            <li><a href="https://www.vsjayan.com//hire-a-freelance-web-designer-chennai.php">Services</a></li>
+                            <li><a href="https://www.vsjayan.com//php-website-design-portfolios-chennai.php">Portfolio</a></li>
+                            <li><a href="https://www.vsjayan.com//website-development-agency-chennai.php">Contact Us</a></li>
+                            
+                        </ul>	
+                        </div>
+                    <div class="title">
+                        <h3>Follow us</h3>
+                    </div>
+                    <div class="social-list">
+                        <!-- <ul class="horizontal-list">
+                            <li class="social-item-2 social-item-1">
+                                <a target="_blank" href="https://www.facebook.com/jayanCEO" class="fa fa-facebook"></a>
+                            </li>
+                            <li class="social-item-2 social-item-1">
+                                <a target="_blank" href="https://twitter.com/vsjayan" class="fa fa-twitter"></a>
+                            </li>
+                            <li class="social-item-2 social-item-1">
+                                <a target="_blank" href="https://www.youtube.com/channel/UC3XjDJ6UPTPtJcdFJj4IMQw" class="fa fa-youtube"></a>
+                            </li>
+                            <li class="social-item-2 social-item-1">
+                                <a target="_blank" href="https://in.linkedin.com/in/vsjayan-inet-51497618" class="fa fa-linkedin"></a>
+                            </li>
+                            <li class="social-item-2 social-item-1">
+                                <a target="_blank" href="https://in.pinterest.com/vsjayan/" class="fa fa-pinterest-p"></a>
+                            </li>
+                        </ul> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // JavaScript -->
+<script>
+
+    const counts = document.querySelectorAll('.count')
+const speed = 97
+
+counts.forEach((counter) => {
+    function upDate(){
+        const target = Number(counter.getAttribute('data-target'))
+        const count = Number(counter.innerText)
+        const inc = target / speed        
+        if(count < target){
+            counter.innerText = Math.floor(inc + count) 
+            setTimeout(upDate, 15)
+        }else{
+            counter.innerText = target
+        }
+    }
+    upDate()
+})
+</script>
+
+
+
+
+
+
+  <!-- JavaScript for Bootstrap -->
+  
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
